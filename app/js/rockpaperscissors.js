@@ -26,9 +26,6 @@ function getComputerMove(move) {
     return move || randomPlay();
 }
 
-var playerMove = getPlayerMove();
-var computerMove = getComputerMove();
-
 function getWinner(playerMove, computerMove) {
     if (playerMove === computerMove) {
     	return "tie";
@@ -65,8 +62,9 @@ function playToFive(x) {
     var computerWins = 0;
     while (playerWins < x && computerWins < x) {
         
-        playerMove = getPlayerMove();
-        computerMove = getComputerMove();
+        
+        var playerMove = getPlayerMove();
+        var computerMove = getComputerMove();
         var winner = getWinner(playerMove,computerMove);
         
     	if (winner === "player") {
